@@ -33,8 +33,8 @@ const activities = [
 
 export function ActivitiesSection() {
   return (
-    <section id="activities" className="py-24 bg-muted/50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="activities" className="py-28 bg-muted/50">
+      <div className="mx-auto max-w-[100rem] px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
@@ -42,19 +42,19 @@ export function ActivitiesSection() {
           >
             Activities
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
             主な活動内容
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
+          <p className="text-muted-foreground text-lg lg:text-xl max-w-3xl mx-auto text-pretty">
             プログラミングスキルを伸ばすための様々な活動を行っています
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {activities.map((activity) => (
             <div
               key={activity.title}
-              className="bg-card rounded-2xl p-6 border border-border hover:shadow-lg hover:-translate-y-1 transition-all"
+              className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all"
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
@@ -65,7 +65,7 @@ export function ActivitiesSection() {
                   style={{ color: activity.color }}
                 />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-lg lg:text-xl font-semibold text-foreground mb-2">
                 {activity.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -79,7 +79,7 @@ export function ActivitiesSection() {
           <h3 className="text-xl font-semibold text-foreground text-center mb-8">
             活動の様子
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}

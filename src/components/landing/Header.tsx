@@ -16,15 +16,15 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center">
+      <div className="w-full px-6 sm:px-8 lg:px-12">
+        <div className="flex h-16 lg:h-20 items-center">
           <Link href="/" className="flex items-center shrink-0">
             <Image
               src="/images/exp-logo.svg"
               alt="EXP. Logo"
               width={80}
               height={32}
-              className="h-8 w-auto"
+              className="h-8 lg:h-10 w-auto"
             />
           </Link>
 
@@ -39,12 +39,6 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <Link
-              href="#join"
-              className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium bg-[var(--exp-cyan)] hover:opacity-90 text-white transition-opacity"
-            >
-              参加する
-            </Link>
           </nav>
 
           <button
@@ -71,13 +65,6 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <Link
-              href="#join"
-              onClick={() => setIsMenuOpen(false)}
-              className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium bg-[var(--exp-cyan)] hover:opacity-90 text-white w-full transition-opacity"
-            >
-              参加する
-            </Link>
           </nav>
         </div>
       )}

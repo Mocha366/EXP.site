@@ -21,9 +21,9 @@ const infoItems = [
 
 export function JoinSection() {
   return (
-    <section id="join" className="py-24 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="join" className="py-28 bg-background">
+      <div className="mx-auto max-w-[100rem] px-6 sm:px-8 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span
               className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
@@ -31,10 +31,10 @@ export function JoinSection() {
             >
               Join Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
-              一緒に成長しませんか？
+<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
+            一緒に成長しませんか？
             </h2>
-            <p className="text-muted-foreground text-lg mb-8 text-pretty">
+            <p className="text-muted-foreground text-lg lg:text-xl mb-10 text-pretty">
               プログラミング初心者から経験者まで、興味のある方なら誰でも歓迎します。
               まずは見学からお気軽にどうぞ！
             </p>
@@ -58,14 +58,16 @@ export function JoinSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#contact"
+                href="mailto:isc_exp@gn.iwasaki.ac.jp"
                 className="inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-semibold bg-[var(--exp-cyan)] hover:opacity-90 text-white transition-opacity"
               >
                 <Mail className="mr-2 h-4 w-4" />
                 お問い合わせ
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/isc_exp.circle"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md border-2 border-[var(--exp-green)] px-6 py-3 text-base font-medium text-[var(--exp-green)] hover:bg-[var(--exp-green)]/10 transition-colors"
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
@@ -81,13 +83,15 @@ export function JoinSection() {
                 background: "linear-gradient(135deg, var(--exp-cyan) 0%, var(--exp-green) 50%, var(--exp-yellow) 100%)"
               }}
             />
-            <Image
-              src="/images/kickoff.jpg"
-              alt="メンバー集合写真"
-              width={600}
-              height={450}
-              className="rounded-2xl w-full h-auto object-cover aspect-[4/3]"
-            />
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/kickoff.JPG"
+                alt="メンバー集合写真"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,10 +1,12 @@
-import Image from "next/image"
+"use client"
+
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { ImageSlider } from "@/components/landing/ImageSlider"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex flex-col overflow-hidden pt-16">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -12,31 +14,23 @@ export function HeroSection() {
         }}
       />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <div className="flex flex-col items-center gap-8">
-          <Image
-            src="/images/exp-logo.svg"
-            alt="EXP. - Experience Point Circle"
-            width={320}
-            height={128}
-            className="w-64 md:w-80 h-auto drop-shadow-lg"
-            priority
-          />
-
-          <div className="space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold text-white drop-shadow-md text-balance">
-              経験値を積んで、成長しよう
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto text-pretty">
-              プログラミングを通じて仲間と共に学び、
-              <br className="hidden sm:block" />
-              実践的なスキルと経験を身につけるサークルです
-            </p>
+      <div className="flex-1 flex flex-col justify-start items-center w-full py-8 gap-4">
+        <div className="w-full py-2">
+          <div className="w-full">
+            <ImageSlider rows={3} />
           </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+        </div>
+        <div className="flex flex-col items-center justify-center w-full gap-6 pb-12 px-4 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto">
+          <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white/95 w-full text-center text-pretty">
+            参加していただいている皆さまへ、心より感謝申し上げます。
+            <br className="hidden sm:block" />
+            EXP.は、学生主体で小中学生に向けたプログラミング教育を行うサークルです。
+          </p>
+          <div className="flex flex-col sm:flex-row gap-10">
             <Link
-              href="#join"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfbu8boYAmLhtGPb_Vl5UfaFyK0NLAfGgzICisvck9sDwVGiQ/viewform?usp=sharing&ouid=102421748208923207087"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-semibold bg-white text-[var(--exp-cyan)] hover:bg-white/90 shadow-lg transition-colors"
             >
               サークルに参加する
@@ -48,16 +42,6 @@ export function HeroSection() {
             >
               詳しく見る
             </Link>
-          </div>
-        </div>
-
-        <div className="mt-16 relative">
-          <div className="bg-white/20 backdrop-blur-sm rounded-2xl border-2 border-white/30 shadow-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <div className="aspect-video bg-white/30 rounded-xl flex items-center justify-center border-2 border-dashed border-white/50">
-              <p className="text-white/80 text-sm md:text-base">
-                メイン画像をここに配置
-              </p>
-            </div>
           </div>
         </div>
       </div>

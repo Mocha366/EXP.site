@@ -26,8 +26,8 @@ const features = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-28 bg-background">
+      <div className="mx-auto max-w-[100rem] px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
@@ -35,20 +35,20 @@ export function AboutSection() {
           >
             About
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
             EXP.について
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
+          <p className="text-muted-foreground text-lg lg:text-xl max-w-3xl mx-auto text-pretty">
             Experience Point Circle（EXP.）は、
             プログラミングを楽しく学び、成長するためのコミュニティです
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-10 mb-20">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow"
+              className="bg-card rounded-2xl p-10 border border-border hover:shadow-lg transition-shadow"
             >
               <div
                 className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
@@ -59,7 +59,7 @@ export function AboutSection() {
                   style={{ color: feature.color }}
                 />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-3">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">

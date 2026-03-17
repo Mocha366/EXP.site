@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="w-full">
         <HeroSection />
         <AboutSection />
         <ActivitiesSection />

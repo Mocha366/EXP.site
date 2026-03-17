@@ -1,11 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Twitter, Instagram, Github } from "lucide-react"
+import { Instagram, Github } from "lucide-react"
 
 const socialLinks = [
-  { name: "Twitter", href: "#", icon: Twitter },
-  { name: "Instagram", href: "#", icon: Instagram },
-  { name: "GitHub", href: "#", icon: Github },
+  { name: "Instagram", href: "https://www.instagram.com/isc_exp.circle", icon: Instagram },
+  { name: "GitHub", href: "https://github.com/IWASAKI-ISC-EXP", icon: Github },
 ]
 
 const footerLinks = [
@@ -16,8 +15,8 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-800 text-white py-16">
+      <div className="mx-auto max-w-[100rem] px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-4">
             <Image
@@ -25,7 +24,7 @@ export function Footer() {
               alt="EXP. Logo"
               width={100}
               height={40}
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
             <p className="text-background/70 text-sm text-center md:text-left">
               Experience Point Circle<br />
@@ -50,6 +49,8 @@ export function Footer() {
               <Link
                 key={social.name}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
                 aria-label={social.name}
               >
