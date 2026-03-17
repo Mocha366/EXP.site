@@ -173,10 +173,11 @@
 }
 
 
-.ugkImgSlider__item img {
+.ugkImgSlider__item {
   height: var(--img-height, 20vh);
-  width: auto;
-  max-width: max-content;
+}
+
+.ugkImgSlider__item img {
   border-radius: 0.5rem;
 }
 

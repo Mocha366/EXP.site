@@ -14,10 +14,41 @@ export function HeroSection() {
         }}
       />
 
-      <div className="flex-1 flex flex-col justify-start items-center w-full py-8 gap-4">
+      <div className="flex-1 flex flex-col justify-start items-center w-full py-8 gap-15">
         <div className="w-full py-2">
           <div className="w-full">
-            <ImageSlider rows={3} />
+            <ImageSlider
+            rows={3}
+            imagesByRow={[
+              [
+                "/images/Hero1/IMG_1470.png",
+                "/images/Hero1/IMG_1480.png",
+                "/images/Hero1/IMG_1486.png",
+                "/images/Hero1/IMG_1489.png",
+                "/images/Hero1/IMG_1534.png",
+                "/images/Hero1/IMG_1548.png",
+                "/images/Hero1/IMG_1551.png",
+              ],
+              [
+                "/images/Hero2/DSC_3715.png",
+                "/images/Hero2/IMG_1237.png",
+                "/images/Hero2/IMG_1252.png",
+                "/images/Hero2/IMG_1307.png",
+                "/images/Hero2/IMG_8403.png",
+                "/images/Hero2/IMG_8412.png",
+                "/images/Hero2/IMG_8415.png",
+              ],
+              [
+                "/images/Hero3/DSC00680.png",
+                "/images/Hero3/DSC00689.png",
+                "/images/Hero3/DSC01116.png",
+                "/images/Hero3/DSC07650.png",
+                "/images/Hero3/IMG_0128.png",
+                "/images/Hero3/IMG_0136.png",
+                "/images/Hero3/PXL_20251206_014431823.png",
+              ],
+            ]}
+          />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center w-full gap-6 pb-12 px-4 sm:px-6 lg:px-8 text-center max-w-6xl mx-auto">

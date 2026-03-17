@@ -6,6 +6,7 @@ const defaultImages = Array(12).fill("/images/kickoff.JPG")
 
 type ImageSliderProps = {
   images?: string[]
+  imagesByRow?: string[][]
   imageHeight?: string
   gap?: string
   duration?: number
@@ -38,13 +39,13 @@ function SliderRow({
       style={style}
     >
       {[...images, ...images].map((src, i) => (
-        <li key={i} className="ugkImgSlider__item shrink-0">
+        <li key={i} className="ugkImgSlider__item shrink-0 aspect-[4/3] overflow-hidden rounded-lg">
           <Image
             src={src}
             alt=""
             width={200}
-            height={120}
-            className="ugkImgSlider__img h-[var(--img-height)] w-auto max-w-max object-cover rounded-lg"
+            height={150}
+            className="ugkImgSlider__img h-full w-full object-cover rounded-lg"
             sizes="(max-width: 640px) 20vw, (max-width: 1024px) 15vw, 10vw"
           />
         </li>
@@ -55,18 +56,22 @@ function SliderRow({
 
 export function ImageSlider({
   images = defaultImages,
+  imagesByRow,
   imageHeight = "20vh",
   gap = "0.5%",
   duration = 60,
   rows = 3,
 }: ImageSliderProps) {
+  const getRowImages = (rowIndex: number) =>
+    imagesByRow?.[rowIndex] ?? images
+
   return (
     <div className="ugkImgSlider w-full overflow-hidden">
       <div className="flex flex-col gap-8">
         {Array.from({ length: rows }).map((_, i) => (
           <div key={i} className="w-full overflow-hidden">
             <SliderRow
-              images={images}
+              images={getRowImages(i)}
               imageHeight={imageHeight}
               gap={gap}
               duration={duration}
