@@ -1,20 +1,21 @@
 import { Mail, MapPin, Calendar, ExternalLink } from "lucide-react"
+import Image from "next/image"
 
 const infoItems = [
   {
     icon: Calendar,
     label: "活動日",
-    value: "毎週水曜日 18:00〜20:00",
+    value: "不定期",
   },
   {
     icon: MapPin,
     label: "活動場所",
-    value: "学生会館 3F ミーティングルーム",
+    value: "〒221-0835 神奈川県横浜市神奈川区鶴屋町２丁目１７",
   },
   {
     icon: Mail,
     label: "連絡先",
-    value: "exp.circle@example.com",
+    value: "isc_exp@gn.iwasaki.ac.jp",
   },
 ]
 
@@ -80,9 +81,13 @@ export function JoinSection() {
                 background: "linear-gradient(135deg, var(--exp-cyan) 0%, var(--exp-green) 50%, var(--exp-yellow) 100%)"
               }}
             />
-            <div className="bg-muted rounded-2xl aspect-[4/3] flex items-center justify-center border-2 border-dashed border-border">
-              <p className="text-muted-foreground text-sm">メンバー集合写真</p>
-            </div>
+            <Image
+              src="/images/kickoff.jpg"
+              alt="メンバー集合写真"
+              width={600}
+              height={450}
+              className="rounded-2xl w-full h-auto object-cover aspect-[4/3]"
+            />
           </div>
         </div>
       </div>

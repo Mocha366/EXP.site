@@ -15,7 +15,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 text-center">
         <div className="flex flex-col items-center gap-8">
           <Image
-            src="/images/exp-logo.png"
+            src="/images/exp-logo.svg"
             alt="EXP. - Experience Point Circle"
             width={320}
             height={128}
