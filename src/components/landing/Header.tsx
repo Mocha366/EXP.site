@@ -6,9 +6,10 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Activities", href: "#activities" },
-  { name: "Join", href: "#join" },
+  { name: "EXP.とは", href: "#about" },
+  { name: "活動内容", href: "#activities" },
+  { name: "活動実績", href: "#achievements" },
+  { name: "入部する", href: "#join" },
 ]
 
 export function Header() {
@@ -34,7 +35,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-base lg:text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.name}
               </Link>
@@ -59,7 +60,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

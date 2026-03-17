@@ -2,6 +2,7 @@ import { Header } from "@/components/landing/Header"
 import { HeroSection } from "@/components/landing/HeroSection"
 import { AboutSection } from "@/components/landing/AboutSection"
 import { ActivitiesSection } from "@/components/landing/ActivitiesSection"
+import { AchievementsSection } from "@/components/landing/AchievementsSection"
 import { JoinSection } from "@/components/landing/JoinSection"
 import { Footer } from "@/components/landing/Footer"
 
@@ -13,6 +14,7 @@ export default function HomePage() {
         <HeroSection />
         <AboutSection />
         <ActivitiesSection />
+        <AchievementsSection />
         <JoinSection />
       </main>
       <Footer />

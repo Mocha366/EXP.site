@@ -1,31 +1,36 @@
+import Image from "next/image"
 import { Code2, Presentation, Trophy, Coffee } from "lucide-react"
 
 const activities = [
   {
     icon: Code2,
-    title: "ハンズオン勉強会",
-    description: "Web開発、アプリ開発、機械学習など、様々なテーマで実践的な勉強会を開催",
+    title: "教材勉強会",
+    description:
+      "教室当日に使用する教材について、メンバー同士で確認・練習を行い、安心して子どもたちに教えられるよう準備します。",
     color: "var(--exp-cyan)",
     bgColor: "rgba(78, 205, 196, 0.1)",
   },
   {
     icon: Presentation,
-    title: "LT会・発表会",
-    description: "メンバーが学んだことや作ったものを発表し、アウトプットの機会を提供",
+    title: "3分LT",
+    description:
+      "自分の好きなことや興味のあるテーマを3分で紹介し、発信する力や、人前で伝える経験を積む機会をつくっています。",
     color: "var(--exp-green)",
     bgColor: "rgba(139, 195, 74, 0.1)",
   },
   {
     icon: Trophy,
-    title: "ハッカソン参加",
-    description: "チームを組んで各種ハッカソンに挑戦。実践的なチーム開発を経験",
+    title: "ワークショップ開催",
+    description:
+      "地域イベントや外部企画に参加し、子どもたちにプログラミングやものづくりの楽しさを届ける体験型企画を行っています。",
     color: "var(--exp-coral)",
     bgColor: "rgba(240, 128, 128, 0.1)",
   },
   {
     icon: Coffee,
-    title: "もくもく会",
-    description: "各自が自分のプロジェクトに取り組む作業会。困ったときはすぐに相談できる",
+    title: "サークル内企画",
+    description:
+      "忘年会やお疲れ様会、キックオフなどを通して、学年間の交流を深め、活動を継続しやすい雰囲気づくりを大切にしています。",
     color: "var(--exp-yellow)",
     bgColor: "rgba(255, 217, 61, 0.15)",
   },
@@ -45,9 +50,6 @@ export function ActivitiesSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
             主な活動内容
           </h2>
-          <p className="text-muted-foreground text-lg lg:text-xl max-w-3xl mx-auto text-pretty">
-            プログラミングスキルを伸ばすための様々な活動を行っています
-          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
@@ -80,12 +82,42 @@ export function ActivitiesSection() {
             活動の様子
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((i) => (
+            {[
+              {
+                src: "/images/activities/IMG_0009.png",
+                alt: "教材勉強会の様子",
+                label: "教材勉強会",
+              },
+              {
+                src: "/images/activities/DSC01395.png",
+                alt: "3分LTの様子",
+                label: "3分LT",
+              },
+              {
+                src: "/images/activities/IMG_3183.png",
+                alt: "ワークショップ開催の様子",
+                label: "ワークショップ開催",
+              },
+              {
+                src: "/images/activities/IMG_2768.png",
+                alt: "サークル内企画の様子",
+                label: "サークル内企画",
+              },
+            ].map((photo) => (
               <div
-                key={i}
-                className="bg-muted rounded-xl aspect-square flex items-center justify-center border-2 border-dashed border-border"
+                key={photo.label}
+                className="relative rounded-xl overflow-hidden aspect-[4/3] border border-border bg-muted"
               >
-                <p className="text-muted-foreground text-sm">写真 {i}</p>
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-black/45 text-white text-xs sm:text-sm px-2 py-1 text-center">
+                  {photo.label}
+                </div>
               </div>
             ))}
           </div>
