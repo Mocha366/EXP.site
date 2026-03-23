@@ -34,9 +34,14 @@ export function JoinSection() {
 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
             一緒に成長しませんか？
             </h2>
-            <p className="text-muted-foreground text-lg lg:text-xl mb-10 text-pretty">
+            <p className="text-muted-foreground text-lg lg:text-xl mb-6 text-pretty">
               プログラミング初心者から経験者まで、興味のある方なら誰でも歓迎します。
               まずは見学からお気軽にどうぞ！
+            </p>
+
+            <p className="text-foreground text-base lg:text-lg mb-10 py-4 px-5 rounded-xl bg-[var(--exp-cyan)]/10 border border-[var(--exp-cyan)]/20 text-pretty">
+              ワークショップやプログラミング教室のご依頼もお待ちしています。<br />
+              お気軽にお問い合わせください！
             </p>
 
             <div className="space-y-4 mb-8">

@@ -1,45 +1,21 @@
 import Image from "next/image"
 import { Code2, Presentation, Trophy, Coffee } from "lucide-react"
-
-const activities = [
-  {
-    icon: Code2,
-    title: "教材勉強会",
-    description:
-      "教室当日に使用する教材について、メンバー同士で確認・練習を行い、安心して子どもたちに教えられるよう準備します。",
-    color: "var(--exp-cyan)",
-    bgColor: "rgba(78, 205, 196, 0.1)",
-  },
-  {
-    icon: Presentation,
-    title: "3分LT",
-    description:
-      "自分の好きなことや興味のあるテーマを3分で紹介し、発信する力や、人前で伝える経験を積む機会をつくっています。",
-    color: "var(--exp-green)",
-    bgColor: "rgba(139, 195, 74, 0.1)",
-  },
-  {
-    icon: Trophy,
-    title: "ワークショップ開催",
-    description:
-      "地域イベントや外部企画に参加し、子どもたちにプログラミングやものづくりの楽しさを届ける体験型企画を行っています。",
-    color: "var(--exp-coral)",
-    bgColor: "rgba(240, 128, 128, 0.1)",
-  },
-  {
-    icon: Coffee,
-    title: "サークル内企画",
-    description:
-      "忘年会やお疲れ様会、キックオフなどを通して、学年間の交流を深め、活動を継続しやすい雰囲気づくりを大切にしています。",
-    color: "var(--exp-yellow)",
-    bgColor: "rgba(255, 217, 61, 0.15)",
-  },
-]
+import { activities, type ActivityIconId } from "@/lib/activities"
 
 export function ActivitiesSection() {
   return (
-    <section id="activities" className="py-28 bg-muted/50">
-      <div className="mx-auto max-w-[100rem] px-6 sm:px-8 lg:px-12">
+    <section id="activities" className="relative py-28 bg-muted/40 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute -inset-[20%] blur-3xl opacity-55"
+          style={{
+            background:
+              "linear-gradient(135deg, var(--exp-coral) 0%, #F4A261 20%, var(--exp-green) 55%, var(--exp-yellow) 100%)",
+          }}
+        />
+      </div>
+
+      <div className="relative mx-auto max-w-[100rem] px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-4"
@@ -53,7 +29,16 @@ export function ActivitiesSection() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {activities.map((activity) => (
+          {activities.map((activity) => {
+            const iconMap: Record<ActivityIconId, React.ComponentType<{ className?: string; style?: React.CSSProperties }>> = {
+              study: Code2,
+              lt: Presentation,
+              workshop: Trophy,
+              circle: Coffee,
+            }
+            const Icon = iconMap[activity.iconId]
+
+            return (
             <div
               key={activity.title}
               className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all"
@@ -62,7 +47,7 @@ export function ActivitiesSection() {
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                 style={{ backgroundColor: activity.bgColor }}
               >
-                <activity.icon
+                <Icon
                   className="w-6 h-6"
                   style={{ color: activity.color }}
                 />
@@ -74,7 +59,7 @@ export function ActivitiesSection() {
                 {activity.description}
               </p>
             </div>
-          ))}
+          )})}
         </div>
 
         <div className="space-y-4">

@@ -8,9 +8,10 @@ const socialLinks = [
 ]
 
 const footerLinks = [
-  { name: "About", href: "#about" },
-  { name: "Activities", href: "#activities" },
-  { name: "Join", href: "#join" },
+  { name: "EXP.とは", href: "#about" },
+  { name: "活動内容", href: "#activities" },
+  { name: "活動実績", href: "#achievements" },
+  { name: "入部する", href: "#join" },
 ]
 
 export function Footer() {
