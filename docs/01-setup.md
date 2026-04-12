@@ -24,7 +24,6 @@ git --version
 
 ```bash
 git clone <このリポジトリのURL>
-cd EXP.
 cd site
 ```
 

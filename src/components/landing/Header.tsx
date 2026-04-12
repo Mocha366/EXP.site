@@ -9,7 +9,7 @@ const navItems = [
   { name: "EXP.とは", href: "#about" },
   { name: "活動内容", href: "#activities" },
   { name: "活動実績", href: "#achievements" },
-  { name: "入部する", href: "#join" },
+  { name: "お問い合わせ", href: "#join" },
 ]
 
 export function Header() {

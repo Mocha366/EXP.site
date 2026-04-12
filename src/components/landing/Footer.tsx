@@ -11,7 +11,7 @@ const footerLinks = [
   { name: "EXP.とは", href: "#about" },
   { name: "活動内容", href: "#activities" },
   { name: "活動実績", href: "#achievements" },
-  { name: "入部する", href: "#join" },
+  { name: "お問い合わせ", href: "#join" },
 ]
 
 export function Footer() {
@@ -29,7 +29,7 @@ export function Footer() {
             />
             <p className="text-background/70 text-sm text-center md:text-left">
               Experience Point Circle<br />
-              プログラミングサークル
+              プログラミング教育サークル
             </p>
           </div>
 
