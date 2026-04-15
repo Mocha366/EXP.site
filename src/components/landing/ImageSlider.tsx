@@ -61,7 +61,7 @@ export function ImageSlider({
   images = defaultImages,
   imagesByRow,
   imageHeight = "clamp(120px, 18vw, 180px)",
-  gap = "8px",
+  gap = "25px",
   duration = 60,
   rows = 3,
 }: ImageSliderProps) {
