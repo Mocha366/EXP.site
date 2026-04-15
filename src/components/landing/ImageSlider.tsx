@@ -61,7 +61,7 @@ export function ImageSlider({
   images = defaultImages,
   imagesByRow,
   imageHeight = "clamp(120px, 18vw, 180px)",
-  gap = "25px",
+  gap = "12px",
   duration = 60,
   rows = 3,
 }: ImageSliderProps) {
@@ -70,7 +70,7 @@ export function ImageSlider({
 
   return (
     <div className="ugkImgSlider w-full overflow-hidden">
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-[10px]">
         {Array.from({ length: rows }).map((_, i) => (
           <div key={i} className="w-full overflow-hidden">
             <SliderRow
