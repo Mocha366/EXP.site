@@ -6,7 +6,7 @@ import { ImageSlider } from "@/components/landing/ImageSlider"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden pt-16">
+    <section className="relative min-h-[100dvh] flex flex-col overflow-hidden pt-16">
       <div
         className="absolute inset-0 -z-10"
         style={{

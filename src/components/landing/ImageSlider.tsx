@@ -27,26 +27,29 @@ function SliderRow({
   direction: "left" | "right"
 }) {
   const style = {
-    "--img-height": imageHeight,
-    "--img-gap": gap,
+    gap,
     animation: `imgSlider${direction === "left" ? "Left" : "Right"} ${duration}s linear infinite`,
     willChange: "transform",
   } as React.CSSProperties
 
   return (
     <ul
-      className="ugkImgSlider__lists flex list-none w-fit shrink-0"
+      className="flex list-none w-max shrink-0"
       style={style}
     >
       {[...images, ...images].map((src, i) => (
-        <li key={i} className="ugkImgSlider__item shrink-0 aspect-[4/3] overflow-hidden rounded-lg">
+        <li
+          key={i}
+          className="shrink-0 overflow-hidden rounded-lg"
+          style={{ height: imageHeight, aspectRatio: "4 / 3" }}
+        >
           <Image
             src={src}
             alt=""
             width={200}
             height={150}
-            className="ugkImgSlider__img h-full w-full object-cover rounded-lg"
-            sizes="(max-width: 640px) 20vw, (max-width: 1024px) 15vw, 10vw"
+            className="h-full w-full object-cover"
+            sizes="(max-width: 640px) 40vw, (max-width: 1024px) 25vw, 200px"
           />
         </li>
       ))}
@@ -57,8 +60,8 @@ function SliderRow({
 export function ImageSlider({
   images = defaultImages,
   imagesByRow,
-  imageHeight = "20vh",
-  gap = "0.5%",
+  imageHeight = "clamp(120px, 18vw, 180px)",
+  gap = "8px",
   duration = 60,
   rows = 3,
 }: ImageSliderProps) {
