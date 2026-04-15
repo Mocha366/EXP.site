@@ -60,7 +60,7 @@ function SliderRow({
 export function ImageSlider({
   images = defaultImages,
   imagesByRow,
-  imageHeight = "clamp(120px, 18vw, 180px)",
+  imageHeight = "clamp(150px, 30vw, 230px)",
   gap = "12px",
   duration = 60,
   rows = 3,
